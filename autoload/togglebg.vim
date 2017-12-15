@@ -1,11 +1,10 @@
 " Toggle Background
-" Modified:     2017 Feb 21
 " Author:       Ethan Schoonover
 " Maintainer:   Daniel M. Capella
 " License:      OSI approved MIT license
 
 if exists('g:loaded_togglebg')
-    finish
+  finish
 endif
 let g:loaded_togglebg = 1
 
@@ -27,28 +26,24 @@ tmenu ToolBar.togglebg Toggle light and dark background modes
 noremap <SID>TogBG  :call <SID>TogBG()<CR>
 
 function! s:TogBG()
-    let &background = ( &background ==# 'dark'? 'light' : 'dark' )
-    if exists('g:colors_name')
-        exe 'colorscheme ' . g:colors_name
-    endif
+  let &background = ( &background ==# 'dark'? 'light' : 'dark' )
+  if exists('g:colors_name')
+    exe 'colorscheme ' . g:colors_name
+  endif
 endfunction
 
 if !exists(':ToggleBG')
-    command ToggleBG :call s:TogBG()
+  command ToggleBG :call s:TogBG()
 endif
 
-function! ToggleBackground()
-    echo 'Please update your ToggleBackground mapping. ":help togglebg" for information.'
-endfunction
-
 function! togglebg#map(mapActivation)
-    try
-        exe 'silent! nmap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
-        exe 'silent! imap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
-        exe 'silent! vmap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
-    finally
-        return 0
-    endtry
+  try
+    exe 'silent! nmap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
+    exe 'silent! imap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
+    exe 'silent! vmap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
+  finally
+    return 0
+  endtry
 endfunction
 
 if !exists('no_plugin_maps') && !hasmapto('<Plug>ToggleBackground')
