@@ -1,0 +1,40 @@
+*togglebg.vim*
+
+
+		Toggle Background Plugin by Ethan Schoonover ~
+
+Toggle Background					*toggle-bg* *togglebg*
+							*toggle-background*
+
+A simple plugin to switch between light and dark background modes and reset the
+colorscheme. This is most useful for colorschemes that support both light and
+dark modes and in terminals or GUI Vim windows where the background will be
+properly set.
+
+Toggle Background can be accessed by:
+
+    * the Window menu (in Vim GUI mode)
+    * the "yin/yang" toolbar button (in Vim GUI mode)
+    * the default mapping of <F5>
+    * custom key mapping you set in your .vimrc (see below)
+    * command line via ":ToggleBG" (no quotes)
+
+Toggle Background starts with a default mapping to function key <F5>. If you 
+are already using this in a mapping, Toggle Background will not map itself to 
+a default and you will have to map it manually in your .vimrc file, or 
+remove/change your existing <F5> mapping to another value. To customize the 
+keyboard mapping in your .vimrc file, use the following line, changing the 
+'<F5>' value to the key or key combination you wish to use:
+
+	call togglebg#map('<F5>')
+
+Note that you'll want to use a single function key or equivalent if you want 
+the plugin to work in all modes (normal, insert, visual).
+
+When using the plugin during normal, visual, or insert mode, there should be 
+no interruption in workflow. However, if you activate the plugin during 
+REPLACE mode, you will switch to standard insert mode (you will leave the 
+overwrite replace mode).
+
+
+vim:tw=78:noet:ts=8:ft=help:norl:
