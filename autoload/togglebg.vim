@@ -27,8 +27,8 @@ noremap <SID>TogBG  :call <SID>TogBG()<CR>
 
 function! s:TogBG()
   let &background = ( &background ==# 'dark'? 'light' : 'dark' )
-  if exists("g:loaded_lightline") && g:colors_name =~# 'gruvbox'
-    execute "source " . g:plug_home . "/gruvbox/autoload/lightline/colorscheme/gruvbox.vim"
+  if exists('g:loaded_lightline') && g:colors_name =~# 'gruvbox'
+    execute 'source ' . g:plug_home . '/gruvbox/autoload/lightline/colorscheme/gruvbox.vim'
     windo call lightline#colorscheme()
   elseif exists('g:colors_name')
     exe 'colorscheme ' . g:colors_name
