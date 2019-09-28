@@ -11,7 +11,7 @@ properly set.
 
 See `:help togglebg`__ for more details.
 
-__ https://github.com/polyzen/togglebg.vim/issues/2
+__ https://gitlab.com/polyzen/togglebg.vim/issues/2
 __ doc/togglebg.txt
 
 License
