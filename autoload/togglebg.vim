@@ -25,7 +25,7 @@ vnoremenu <script> ToolBar.togglebg <ESC><SID>TogBG<ESC>gv
 tmenu ToolBar.togglebg Toggle light and dark background modes
 noremap <SID>TogBG  :call <SID>TogBG()<CR>
 
-function! s:TogBG()
+function! s:TogBG() abort
   let &background = ( &background ==# 'dark'? 'light' : 'dark' )
   if exists('g:loaded_lightline') && g:colors_name =~# 'gruvbox'
     execute 'source ' . g:plug_home . '/gruvbox/autoload/lightline/colorscheme/gruvbox.vim'
@@ -39,7 +39,7 @@ if !exists(':ToggleBG')
   command ToggleBG :call s:TogBG()
 endif
 
-function! togglebg#map(mapActivation)
+function! togglebg#map(mapActivation) abort
   try
     exe 'silent! nmap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
     exe 'silent! imap <unique> '.a:mapActivation.' <Plug>ToggleBackground'
