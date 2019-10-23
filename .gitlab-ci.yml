@@ -1,0 +1,5 @@
+image: fnichol/vint
+
+test:
+  script: vint .
+  allow_failure: true
